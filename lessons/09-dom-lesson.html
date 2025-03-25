@@ -1,0 +1,51 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <title>dom</title>
+  </head>
+  <body>
+    <button>9a</button>
+    <button class="button9B" onclick="document.querySelector('.button9B').innerHTML = '9b done'">9b</button>
+
+
+    <button class="heads" onclick="
+    document.querySelector('.text').innerHTML = 'You chose: heads'
+    " >heads</button>
+    <button class="tails" onclick="document.querySelector('.text').innerHTML = 'You chose: tails'">tails</button>
+
+    <p class="text"></p>
+
+    <input class="inputField" placeholder="Name" onkeydown="showName()">
+    <button onclick="
+      nameView()
+    ">Submit</button>
+    <p class="nameDisplay"></p>
+
+
+    <input placeholder="Text" class="textHolder" onkeyup="
+      textChanger()
+    ">
+    <p class="textWrite"></p>
+
+
+    <script>
+      let paragraph = document.querySelector('.textHolder');
+
+      function textChanger () {
+        document.querySelector('.textWrite').innerHTML = `${paragraph.value}`
+      }
+
+      function nameView () {
+        let name = document.querySelector('.inputField');
+
+        document.querySelector('.nameDisplay').innerHTML = `Your name is ${name.value}`
+      }
+
+      function showName () {
+        if (event.key === 'Enter') {
+          nameView()
+        }
+      }
+    </script>
+  </body>
+</html>
